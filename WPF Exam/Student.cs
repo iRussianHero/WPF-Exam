@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPF_Exam
 {
-    internal class Student
+    public class Student
     {
         string LastName { get; set; }
         string Groupe { get; set; }

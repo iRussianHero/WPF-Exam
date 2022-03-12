@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace WPF_Exam
 {
@@ -22,6 +23,16 @@ namespace WPF_Exam
         double avgScore;
         string subject;
 
-
+        public ICommand CloseButton
+        {
+            get
+            {
+                return new ButtonsCommand(() =>
+                {
+                    ViewModel.addPosition.Close();
+                }
+           );
+            }
+        }
     }
 }

@@ -75,5 +75,16 @@ namespace WPF_Exam
                 RefreshData(findText);
             }
         }
+
+        public string FindText
+        {
+            get { return findText; }
+            set
+            {
+                findText = value;
+                RefreshData(findText);
+                PropertyChanging("FindText");
+            }
+        }
     }
 }

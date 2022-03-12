@@ -65,6 +65,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AddPersonViewModel.cs" />
+    <Compile Include="ButtonsCommand.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="StudyDB.cs" />
     <Compile Include="Teacher.cs" />

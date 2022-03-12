@@ -46,6 +46,15 @@ namespace WPF_Exam
                 PropertyChanging("Students");
             }
         }
+        public List<Teacher> Teachers
+        {
+            get { return teachers; }
+            set
+            {
+                teachers = new List<Teacher>(teachers);
+                PropertyChanging("Teachers");
+            }
+        }
 
         void RefreshData(string text = "")
         {

@@ -66,6 +66,7 @@
     </ApplicationDefinition>
     <Compile Include="Student.cs" />
     <Compile Include="StudyDB.cs" />
+    <Compile Include="Teacher.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

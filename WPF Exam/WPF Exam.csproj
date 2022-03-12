@@ -66,19 +66,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AddPerson.xaml.cs">
+    <Compile Include="View\AddPerson.xaml.cs">
       <DependentUpon>AddPerson.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddPersonViewModel.cs" />
-    <Compile Include="ButtonsCommand.cs" />
-    <Compile Include="Student.cs" />
+    <Compile Include="ViewModel\AddPersonViewModel.cs" />
+    <Compile Include="Model\ButtonsCommand.cs" />
+    <Compile Include="Model\Student.cs" />
     <Compile Include="StudyDB.cs" />
-    <Compile Include="Teacher.cs" />
-    <Compile Include="UpdatePerson.xaml.cs">
+    <Compile Include="Model\Teacher.cs" />
+    <Compile Include="View\UpdatePerson.xaml.cs">
       <DependentUpon>UpdatePerson.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel.cs" />
-    <Page Include="AddPerson.xaml">
+    <Compile Include="ViewModel\ViewModel.cs" />
+    <Page Include="View\AddPerson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -94,7 +94,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="UpdatePerson.xaml">
+    <Page Include="View\UpdatePerson.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,10 +126,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="ViewModel\" />
-    <Folder Include="View\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

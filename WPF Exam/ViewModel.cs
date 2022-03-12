@@ -26,6 +26,7 @@ namespace WPF_Exam
         string findText;
         StudyDB myDB;
         public static AddPerson addPerson;
+        public static AddPerson updatePosition;
 
         public ViewModel()
         {
@@ -111,6 +112,20 @@ namespace WPF_Exam
               {
                   addPerson = new AddPerson();
                   addPerson.ShowDialog();
+                  RefreshData();
+              }
+              );
+            }
+        }
+        public ICommand UpdatePosition
+        {
+            get
+            {
+                return new ButtonsCommand(
+              () =>
+              {
+                  updatePosition = new UpdatePosition();
+                  updatePosition.ShowDialog();
                   RefreshData();
               }
               );

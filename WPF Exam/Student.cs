@@ -8,9 +8,9 @@ namespace WPF_Exam
 {
     public class Student
     {
-        string LastName { get; set; }
-        string Groupe { get; set; }
-        string Teacher { get; set; }    
-        double AvgScore { get; set; }
+        public string LastName { get; set; }
+        public string Groupe { get; set; }
+        public string Teacher { get; set; }
+        public double AvgScore { get; set; }
     }
 }

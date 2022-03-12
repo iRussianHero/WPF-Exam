@@ -8,7 +8,7 @@ namespace WPF_Exam
 {
     public class Teacher
     {
-        string LastName { get; set; }   
-        string Subject { get; set; }
+        public string LastName { get; set; }
+        public string Subject { get; set; }
     }
 }

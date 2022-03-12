@@ -25,8 +25,9 @@ namespace WPF_Exam
         bool rb2;
         string findText;
         StudyDB myDB;
+        public static Student selectedItem;
         public static AddPerson addPerson;
-        public static AddPerson updatePosition;
+        public static UpdatePerson updatePerson;
 
         public ViewModel()
         {
@@ -117,19 +118,30 @@ namespace WPF_Exam
               );
             }
         }
-        public ICommand UpdatePosition
+        public ICommand UpdatePerson
         {
             get
             {
                 return new ButtonsCommand(
               () =>
               {
-                  updatePosition = new UpdatePosition();
-                  updatePosition.ShowDialog();
+                  updatePerson = new UpdatePerson();
+                  updatePerson.ShowDialog();
                   RefreshData();
               }
               );
             }
         }
+        public Student SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                selectedItem = value;
+                PropertyChanging("SelectedItem");
+            }
+        }
+
+
     }
 }

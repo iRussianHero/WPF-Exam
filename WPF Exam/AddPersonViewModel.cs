@@ -20,7 +20,12 @@ namespace WPF_Exam
 
         public AddPersonViewModel()
         {
-            this.context = new StudyDB();
+            if (ViewModel.selectedItem == null) return;
+            context = new StudyDB();
+            LastName = ViewModel.selectedItem.LastName;
+            Groupe = ViewModel.selectedItem.Groupe;
+            Teacher = ViewModel.selectedItem.Teacher;
+            AvgScore = ViewModel.selectedItem.AvgScore;
         }
 
         string lastName;
@@ -82,6 +87,21 @@ namespace WPF_Exam
                         );
                     context.SaveChanges();
                     ViewModel.addPerson.Close();
+                });
+            }
+        }
+        public ICommand UpdateButton
+        {
+            get
+            {
+                return new ButtonsCommand(() =>
+                {
+                    Student update = context.Students.Find(ViewModel.selectedItem.Id);
+                    update.LastName = lastName;
+                    update.Groupe = groupe;
+                    update.Teacher = teacher;
+                    update.AvgScore = avgScore;
+                    context.SaveChanges();
                 });
             }
         }

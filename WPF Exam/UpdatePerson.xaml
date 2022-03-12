@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPF_Exam.UpdatePerson"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Exam"
+        mc:Ignorable="d"
+        Title="UpdatePerson" Height="450" Width="800">
+    <Window.DataContext>
+        <local:AddPersonViewModel></local:AddPersonViewModel>
+    </Window.DataContext>
+    <Grid>
+        <StackPanel>
+            <Label Margin="5" HorizontalAlignment="Center">Фамилия:</Label>
+            <TextBox Text="{Binding LastName ,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
+            <Label Margin="5" HorizontalAlignment="Center">Группа:</Label>
+            <TextBox Text="{Binding Groupe ,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
+            <Label Margin="5" HorizontalAlignment="Center">Преподаватель:</Label>
+            <TextBox Text="{Binding Teacher ,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
+            <Label Margin="5"></Label>
+            <Label Margin="5" HorizontalAlignment="Center">Средний бал:</Label>
+            <TextBox Text="{Binding AvgScore ,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
+            <Label Margin="5"></Label>
+            <Button Command="{Binding UpdateButton,UpdateSourceTrigger=PropertyChanged}" Margin="5">Изменить</Button>
+            <Button Command="{Binding CloseButton,UpdateSourceTrigger=PropertyChanged}" Margin="5">Отметить</Button>
+        </StackPanel>
+    </Grid>
+</Window>

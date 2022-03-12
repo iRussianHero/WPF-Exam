@@ -17,11 +17,16 @@ namespace WPF_Exam
         }
 
         StudyDB context;
+
+        public AddPersonViewModel()
+        {
+            this.context = new StudyDB();
+        }
+
         string lastName;
         string groupe;
         string teacher;
         double avgScore;
-        string subject;
 
         public string LastName
         {
@@ -59,15 +64,6 @@ namespace WPF_Exam
                 PropertyChanging("AvgScore");
             }
         }
-        public string Subject
-        {
-            get { return subject; }
-            set
-            {
-                subject = value;
-                PropertyChanging("Subject");
-            }
-        }
 
         public ICommand AddButton
         {
@@ -89,5 +85,17 @@ namespace WPF_Exam
                 });
             }
         }
+        public ICommand CloseButton
+        {
+            get
+            {
+                return new ButtonsCommand(() =>
+                {
+                    ViewModel.addPerson.Close();
+                }
+           );
+            }
+        }
+
     }
 }

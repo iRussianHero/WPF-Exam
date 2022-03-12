@@ -8,6 +8,7 @@ namespace WPF_Exam
 {
     public class Student
     {
+        public int Id { get; set; }
         public string LastName { get; set; }
         public string Groupe { get; set; }
         public string Teacher { get; set; }

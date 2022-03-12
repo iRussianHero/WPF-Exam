@@ -11,11 +11,16 @@
     </Window.DataContext>
     <Grid>
         <StackPanel>
-            <Label Margin="5">Наименование</Label>
-            <TextBox Text="{Binding Name ,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
-            <Label Margin="5">Цена</Label>
-            <TextBox Text="{Binding Price ,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
-            <Label Margin="5">Категория</Label>
+            <Label Margin="5" HorizontalAlignment="Center">Фамилия:</Label>
+            <TextBox Text="{Binding LastName ,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
+            <Label Margin="5" HorizontalAlignment="Center">Группа:</Label>
+            <TextBox Text="{Binding Groupe ,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
+            <Label Margin="5" HorizontalAlignment="Center">Преподаватель:</Label>
+            <TextBox Text="{Binding Teacher ,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
+            <Label Margin="5"></Label>
+            <Label Margin="5" HorizontalAlignment="Center">Средний бал:</Label>
+            <TextBox Text="{Binding AvgScore ,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
+            <Label Margin="5"></Label>
             <Button Command="{Binding AddButton,UpdateSourceTrigger=PropertyChanged}" Margin="5">Добавить</Button>
             <Button Command="{Binding CloseButton,UpdateSourceTrigger=PropertyChanged}" Margin="5">Отметить</Button>
         </StackPanel>

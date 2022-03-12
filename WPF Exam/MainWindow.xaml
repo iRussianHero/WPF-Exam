@@ -27,7 +27,7 @@
         <Label Grid.Column="1" Content="по преподавателю" HorizontalAlignment="Left" Margin="100,6,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="Students" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
         <DataGrid x:Name="Teachers" Grid.Column="1" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
-        <Button Content="Добавить" HorizontalAlignment="Right" Margin="0,0,285,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105"/>
+        <Button Command="{Binding AddButton, UpdateSourceTrigger=PropertyChanged}" Content="Добавить" HorizontalAlignment="Right" Margin="0,0,285,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105"/>
         <Button Content="Редактировать" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="104" Margin="0,0,176,0"/>
         <Button Content="Удалить" HorizontalAlignment="Right" Margin="0,0,66,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105"/>
         <Button Content="Добавить" HorizontalAlignment="Right" Margin="0,0,285,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105" Grid.Column="1"/>

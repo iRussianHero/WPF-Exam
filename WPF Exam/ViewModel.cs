@@ -27,6 +27,13 @@ namespace WPF_Exam
         public static AddPersonViewModel addPerson;
         public List<Student> Students { get; private set; }
 
+        public ViewModel()
+        {
+            myDB = new StudyDB();
+            students = new List<Student>();
+            teachers = new List<Teacher>();
+            RefreshData();
+        }
 
         void RefreshData(string text = "")
         {
@@ -68,7 +75,5 @@ namespace WPF_Exam
                 RefreshData(findText);
             }
         }
-
-
     }
 }

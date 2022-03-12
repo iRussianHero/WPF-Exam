@@ -96,6 +96,5 @@ namespace WPF_Exam
            );
             }
         }
-
     }
 }

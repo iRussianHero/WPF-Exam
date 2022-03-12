@@ -26,7 +26,6 @@ namespace WPF_Exam
         string findText;
         StudyDB myDB;
         public static AddPerson addPerson;
-        public List<Student> Students { get; private set; }
 
         public ViewModel()
         {
@@ -34,6 +33,15 @@ namespace WPF_Exam
             students = new List<Student>();
             teachers = new List<Teacher>();
             RefreshData();
+        }
+        public List<Student> Students
+        {
+            get { return students; }
+            set
+            {
+                students = new List<Student>(students);
+                PropertyChanging("Students");
+            }
         }
 
         void RefreshData(string text = "")
@@ -52,7 +60,14 @@ namespace WPF_Exam
                             orderby prod.AvgScore
                             select prod).ToList();
             }
-            Students = students;
+            else
+            {
+                students = (from prod in myDB.Students
+                            where prod.LastName.Contains(text)
+                            orderby prod.LastName
+                            select prod).ToList();
+            }
+            Students = new List<Student> (students);
         }
 
         public bool Rb

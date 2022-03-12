@@ -20,12 +20,12 @@
             <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBox HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="85" Height="18"/>
-        <RadioButton x:Name="Rb1" Content="по группе" HorizontalAlignment="Left" Margin="115,13,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="Rb2" Content="по среднему баллу" HorizontalAlignment="Left" Margin="210,13,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="10,11,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="85" Height="18" Grid.Column="1"/>
+        <TextBox Text="{Binding FindText, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Height="18"/>
+        <RadioButton x:Name="Rb1" IsChecked="{Binding Rb1, UpdateSourceTrigger=PropertyChanged}" Content="по группе" HorizontalAlignment="Left" Margin="115,13,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Rb2" IsChecked="{Binding Rb2, UpdateSourceTrigger=PropertyChanged}" Content="по среднему баллу" HorizontalAlignment="Left" Margin="210,13,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,11,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="85" Height="18" Grid.Column="1"/>
         <Label Grid.Column="1" Content="по преподавателю" HorizontalAlignment="Left" Margin="100,6,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="Students" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <DataGrid x:Name="Students" ItemsSource="{Binding Students, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
         <DataGrid x:Name="Teachers" Grid.Column="1" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
         <Button Command="{Binding AddButton, UpdateSourceTrigger=PropertyChanged}" Content="Добавить" HorizontalAlignment="Right" Margin="0,0,285,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105"/>
         <Button Content="Редактировать" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="104" Margin="0,0,176,0"/>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace WPF_Exam
 {
@@ -24,7 +25,7 @@ namespace WPF_Exam
         bool rb2;
         string findText;
         StudyDB myDB;
-        public static AddPersonViewModel addPerson;
+        public static AddPerson addPerson;
         public List<Student> Students { get; private set; }
 
         public ViewModel()
@@ -84,6 +85,20 @@ namespace WPF_Exam
                 findText = value;
                 RefreshData(findText);
                 PropertyChanging("FindText");
+            }
+        }
+        public ICommand AddButton
+        {
+            get
+            {
+                return new ButtonsCommand(
+              () =>
+              {
+                  addPerson = new AddPerson();
+                  addPerson.ShowDialog();
+                  RefreshData();
+              }
+              );
             }
         }
     }

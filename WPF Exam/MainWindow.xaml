@@ -6,7 +6,32 @@
         xmlns:local="clr-namespace:WPF_Exam"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:ViewModel></local:ViewModel>
+    </Window.DataContext>
+
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="22*"></RowDefinition>
+            <RowDefinition Height="173*"></RowDefinition>
+            <RowDefinition Height="22*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TextBox HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="85" Height="18"/>
+        <RadioButton x:Name="Rb1" Content="по группе" HorizontalAlignment="Left" Margin="115,13,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Rb2" Content="по среднему баллу" HorizontalAlignment="Left" Margin="210,13,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,11,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="85" Height="18" Grid.Column="1"/>
+        <Label Grid.Column="1" Content="по преподавателю" HorizontalAlignment="Left" Margin="100,6,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="Students" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <DataGrid x:Name="Teachers" Grid.Column="1" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
+        <Button Content="Добавить" HorizontalAlignment="Right" Margin="0,0,285,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105"/>
+        <Button Content="Редактировать" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="104" Margin="0,0,176,0"/>
+        <Button Content="Удалить" HorizontalAlignment="Right" Margin="0,0,66,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105"/>
+        <Button Content="Добавить" HorizontalAlignment="Right" Margin="0,0,285,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105" Grid.Column="1"/>
+        <Button Content="Редактировать" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="104" Margin="0,0,176,0" Grid.Column="1"/>
+        <Button Content="Удалить" HorizontalAlignment="Right" Margin="0,0,66,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105" Grid.Column="1"/>
     </Grid>
 </Window>

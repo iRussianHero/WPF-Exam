@@ -22,7 +22,7 @@
             <TextBox Text="{Binding AvgScore ,UpdateSourceTrigger=PropertyChanged}" Margin="5"></TextBox>
             <Label Margin="5"></Label>
             <Button Command="{Binding UpdateButton,UpdateSourceTrigger=PropertyChanged}" Margin="5">Изменить</Button>
-            <Button Command="{Binding CloseButton,UpdateSourceTrigger=PropertyChanged}" Margin="5">Отметить</Button>
+            <Button Command="{Binding CloseButtonUP,UpdateSourceTrigger=PropertyChanged}" Margin="5">Отметить</Button>
         </StackPanel>
     </Grid>
 </Window>

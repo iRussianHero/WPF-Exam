@@ -28,8 +28,8 @@
         <DataGrid x:Name="Students" SelectedItem="{Binding SelectedItem,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Students, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
         <DataGrid x:Name="Teachers" Grid.Column="1" Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}"/>
         <Button Command="{Binding AddButton, UpdateSourceTrigger=PropertyChanged}" Content="Добавить" HorizontalAlignment="Right" Margin="0,0,285,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105"/>
-        <Button Command="{Binding UpdateButton, UpdateSourceTrigger=PropertyChanged}" Content="Редактировать" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="104" Margin="0,0,176,0"/>
-        <Button Content="Удалить" HorizontalAlignment="Right" Margin="0,0,66,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105"/>
+        <Button Command="{Binding UpdatePerson, UpdateSourceTrigger=PropertyChanged}" Content="Редактировать" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="104" Margin="0,0,176,0"/>
+        <Button Command="{Binding DeleteButton, UpdateSourceTrigger=PropertyChanged}" Content="Удалить" HorizontalAlignment="Right" Margin="0,0,66,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105"/>
         <Button Content="Добавить" HorizontalAlignment="Right" Margin="0,0,285,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105" Grid.Column="1"/>
         <Button Content="Редактировать" HorizontalAlignment="Right" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="104" Margin="0,0,176,0" Grid.Column="1"/>
         <Button Content="Удалить" HorizontalAlignment="Right" Margin="0,0,66,0" Grid.Row="2" VerticalAlignment="Center" Height="34" Width="105" Grid.Column="1"/>

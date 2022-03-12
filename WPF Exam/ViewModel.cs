@@ -4,12 +4,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace WPF_Exam
 {
-    class ViewModel:INotifyPropertyChanged
+    class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -69,7 +70,7 @@ namespace WPF_Exam
                             orderby prod.LastName
                             select prod).ToList();
             }
-            Students = new List<Student> (students);
+            Students = new List<Student>(students);
         }
 
         public bool Rb
@@ -104,6 +105,16 @@ namespace WPF_Exam
                 PropertyChanging("FindText");
             }
         }
+        public Student SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                selectedItem = value;
+                PropertyChanging("SelectedItem");
+            }
+        }
+
         public ICommand AddButton
         {
             get
@@ -132,16 +143,29 @@ namespace WPF_Exam
               );
             }
         }
-        public Student SelectedItem
+        public ICommand DeleteButton
         {
-            get { return selectedItem; }
-            set
+            get
             {
-                selectedItem = value;
-                PropertyChanging("SelectedItem");
+                return new ButtonsCommand(
+              () =>
+              {
+                  if (selectedItem != null)
+                  {
+                      MessageBoxResult result = MessageBox.Show($"Действительно удалить: ID-{SelectedItem.Id}, Фамилия-{SelectedItem.LastName}", "Удалить",
+                      MessageBoxButton.YesNo,
+                      MessageBoxImage.Question);
+
+                      if (result == MessageBoxResult.Yes)
+                      {
+                          myDB.Students.Remove(SelectedItem);
+                          myDB.SaveChanges();
+                          RefreshData();
+                      }
+                  }
+              }
+              );
             }
         }
-
-
     }
 }

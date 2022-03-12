@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace WPF_Exam
@@ -96,12 +97,14 @@ namespace WPF_Exam
             {
                 return new ButtonsCommand(() =>
                 {
+                    if (ViewModel.selectedItem == null) return;
                     Student update = context.Students.Find(ViewModel.selectedItem.Id);
                     update.LastName = lastName;
                     update.Groupe = groupe;
                     update.Teacher = teacher;
                     update.AvgScore = avgScore;
                     context.SaveChanges();
+                    ViewModel.updatePerson.Close();
                 });
             }
         }
@@ -112,6 +115,17 @@ namespace WPF_Exam
                 return new ButtonsCommand(() =>
                 {
                     ViewModel.addPerson.Close();
+                }
+           );
+            }
+        }
+        public ICommand CloseButtonUP
+        {
+            get
+            {
+                return new ButtonsCommand(() =>
+                {
+                    ViewModel.updatePerson.Close();
                 }
            );
             }
